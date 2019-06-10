@@ -1,0 +1,12 @@
+C:\C#\PrivateData\PrivateData\bin\Debug\PrivateData.exe.config
+C:\C#\PrivateData\PrivateData\bin\Debug\PrivateData.exe
+C:\C#\PrivateData\PrivateData\bin\Debug\PrivateData.pdb
+C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.csprojAssemblyReference.cache
+C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.frm_main.resources
+C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.Properties.Resources.resources
+C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.csproj.GenerateResource.cache
+C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.csproj.CoreCompileInputs.cache
+C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.exe
+C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.pdb
+C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.Views.Dialogs.frm_AskPassword.resources
+C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.Views.Dialogs.frm_askPasswordNoConfirm.resources
