@@ -22,7 +22,11 @@ namespace PrivateData
                 {
                     FileAssociation.Associate("Зашифрованные данные", null);
                 }
-                catch { MessageBox.Show("Не удалось установить ассоциацию для файлов, пожалуйста запустите программу от имени администратора", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                catch
+                {
+                    MessageBox.Show("Не удалось установить ассоциацию для файлов, пожалуйста запустите программу от имени администратора",
+                        "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             this.args = args;
         }
@@ -61,6 +65,46 @@ namespace PrivateData
             }
         }
 
+        private void Btn_load_Click(object sender, System.EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "Private text | *.ptxt"
+            };
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string file = ofd.FileName;
+
+                LoadData(file);
+
+                UpdateUI();
+            }
+        }
+
+        private void Btn_importImage_Click(object sender, System.EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            ofd.Multiselect = true;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                for (int i = 0; i < ofd.FileNames.Length; i++)
+                {
+                    dm.AddImage(ofd.FileNames[i]);
+                }
+                UpdateUI();
+                saved = false;
+            }
+        }
+
+        private void Btn_settings_Click(object sender, System.EventArgs e)
+        {
+            frm_settings settings = new frm_settings();
+            settings.Show();
+        }
+
+        #region private
         void SaveToFile(string path, string pass)
         {
             dm = new DataManager(txtbx_name.Text, txtbx_content.Text);
@@ -156,38 +200,6 @@ namespace PrivateData
                 MessageBox.Show("Не верный пароль", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void Btn_load_Click(object sender, System.EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog
-            {
-                Filter = "Private text | *.ptxt"
-            };
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                string file = ofd.FileName;
-
-                LoadData(file);
-
-                UpdateUI();
-            }
-        }
-
-        private void Btn_importImage_Click(object sender, System.EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-            ofd.Multiselect = true;
-
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                for (int i = 0; i < ofd.FileNames.Length; i++)
-                {
-                    dm.AddImage(ofd.FileNames[i]);
-                }
-                UpdateUI();
-                saved = false;
-            }
-        }
+        #endregion
     }
 }

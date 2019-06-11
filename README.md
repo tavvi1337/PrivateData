@@ -1,2 +1,2 @@
 # PrivateData
-keep you info private
+keep your info private

@@ -40,6 +40,7 @@ namespace PrivateData
             this.tab_text = new System.Windows.Forms.TabPage();
             this.tab_pictures = new System.Windows.Forms.TabPage();
             this.btn_importImage = new System.Windows.Forms.Button();
+            this.btn_settings = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tab_text.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +79,7 @@ namespace PrivateData
             this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_save.Location = new System.Drawing.Point(556, 363);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(119, 23);
+            this.btn_save.Size = new System.Drawing.Size(119, 22);
             this.btn_save.TabIndex = 3;
             this.btn_save.Text = "Сохранить";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -114,7 +115,7 @@ namespace PrivateData
             this.tab_text.Location = new System.Drawing.Point(4, 22);
             this.tab_text.Name = "tab_text";
             this.tab_text.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_text.Size = new System.Drawing.Size(552, 222);
+            this.tab_text.Size = new System.Drawing.Size(665, 293);
             this.tab_text.TabIndex = 0;
             this.tab_text.Text = "Текст";
             this.tab_text.UseVisualStyleBackColor = true;
@@ -141,11 +142,23 @@ namespace PrivateData
             this.btn_importImage.UseVisualStyleBackColor = true;
             this.btn_importImage.Click += new System.EventHandler(this.Btn_importImage_Click);
             // 
+            // btn_settings
+            // 
+            this.btn_settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_settings.Location = new System.Drawing.Point(178, 363);
+            this.btn_settings.Name = "btn_settings";
+            this.btn_settings.Size = new System.Drawing.Size(119, 22);
+            this.btn_settings.TabIndex = 6;
+            this.btn_settings.Text = "Настройки";
+            this.btn_settings.UseVisualStyleBackColor = true;
+            this.btn_settings.Click += new System.EventHandler(this.Btn_settings_Click);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 388);
+            this.Controls.Add(this.btn_settings);
             this.Controls.Add(this.btn_importImage);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.btn_load);
@@ -175,6 +188,7 @@ namespace PrivateData
         private System.Windows.Forms.TabPage tab_text;
         private System.Windows.Forms.TabPage tab_pictures;
         private System.Windows.Forms.Button btn_importImage;
+        private Button btn_settings;
     }
 }
 
