@@ -1,18 +1,20 @@
-﻿namespace PrivateData
+﻿using System.Windows.Forms;
+
+namespace PrivateData
 {
     partial class frm_main
     {
-        /// <summary>
-        /// Обязательная переменная конструктора.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Освободить все используемые ресурсы.
-        /// </summary>
-        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         protected override void Dispose(bool disposing)
         {
+            if (!saved)
+            {
+                if (MessageBox.Show("Вы не сохранили изменения, выйти?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                {
+                    return;
+                }
+            }
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -152,6 +154,7 @@
             this.Controls.Add(this.txtbx_name);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Private data";
             this.Shown += new System.EventHandler(this.Frm_main_Shown);
             this.tabControl.ResumeLayout(false);

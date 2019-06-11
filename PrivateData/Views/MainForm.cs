@@ -11,6 +11,8 @@ namespace PrivateData
         DataManager dm = new DataManager("", "");
         string importedPath = "";
         string importedPass = "";
+        bool saved = false;
+
         public frm_main(string[] args)
         {
             InitializeComponent();
@@ -35,32 +37,38 @@ namespace PrivateData
 
         private void Btn_save_Click(object sender, System.EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtbx_name.Text))
+            {
+                MessageBox.Show("Пожалуйста введите название", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (importedPath == "")//nothing imported
             {
                 string path = AskSavePath();
-                if (path == null)
-                {
-                    return;
-                }
+
+                if (path == null) { return; }
+
                 string pass = AskConfirmPass();
-                if (pass != null)
-                {
-                    dm = new DataManager(txtbx_name.Text, txtbx_content.Text);
-                    dm.SaveData($"{path}\\{dm.Title}.ptxt", pass);
-                    importedPath = $"{path}\\{dm.Title}.ptxt";
-                    importedPass = pass;
-                }
+
+                if (pass == null) { return; }
+
+                SaveToFile(path, pass);
             }
             else
             {
-                if (string.IsNullOrWhiteSpace(txtbx_name.Text))
-                {
-                    MessageBox.Show("Пожалуйста введите имя файла", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                dm = new DataManager(txtbx_name.Text, txtbx_content.Text);
-                dm.SaveData(importedPath, importedPass);
+                SaveToFile(importedPath, importedPass);
             }
+        }
+
+        void SaveToFile(string path, string pass)
+        {
+            dm = new DataManager(txtbx_name.Text, txtbx_content.Text);
+            dm.SaveData(path, pass);
+
+            importedPath = path;
+            importedPass = pass;
+            saved = true;
         }
 
         void UpdateUI()
@@ -178,6 +186,7 @@ namespace PrivateData
                     dm.AddImage(ofd.FileNames[i]);
                 }
                 UpdateUI();
+                saved = false;
             }
         }
     }
