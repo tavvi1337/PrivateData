@@ -46,6 +46,8 @@ namespace PrivateData
                 {
                     dm = new DataManager(txtbx_name.Text, txtbx_content.Text);
                     dm.SaveData($"{path}\\{dm.Title}.ptxt", pass);
+                    importedPath = $"{path}\\{dm.Title}.ptxt";
+                    importedPass = pass;
                 }
             }
             else
