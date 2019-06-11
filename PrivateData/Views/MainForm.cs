@@ -1,5 +1,6 @@
 ﻿using PrivateData.ViewModels;
 using PrivateData.Views.Dialogs;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PrivateData
@@ -66,6 +67,35 @@ namespace PrivateData
         {
             txtbx_name.Text = dm.Title;
             txtbx_content.Text = dm.Contents;
+
+            pic_margain = 20;
+            pic_location_X = 5;
+            pic_location_Y = 5;
+            tab_pictures.Controls.Clear();
+
+            foreach (Bitmap image in dm.Images)
+            {
+                AddImageToUI(image);
+            }
+        }
+
+        int pic_margain = 20;
+        int pic_location_X = 5;
+        int pic_location_Y = 5;
+        void AddImageToUI(Bitmap image)
+        {
+            PictureBox pic_box = new PictureBox()
+            {
+                Location = new Point(pic_location_X, pic_location_Y),
+                Image = image,
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Size = new Size(image.Width, image.Height)
+            };
+
+            pic_box.Click += (s, e) => { new ImageViewer(image, dm).ShowDialog(); UpdateUI(); };
+            pic_location_Y += pic_box.Height + pic_margain;
+
+            tab_pictures.Controls.Add(pic_box);
         }
 
         string AskSavePath()
@@ -90,7 +120,7 @@ namespace PrivateData
 
         string AskNoConfimPass()
         {
-            var askPassword = new frm_askPasswordNoConfirm();
+            frm_askPasswordNoConfirm askPassword = new frm_askPasswordNoConfirm();
             if (askPassword.ShowDialog() == DialogResult.OK)
             {
                 return askPassword.Password;
@@ -131,6 +161,22 @@ namespace PrivateData
 
                 LoadData(file);
 
+                UpdateUI();
+            }
+        }
+
+        private void Btn_importImage_Click(object sender, System.EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            ofd.Multiselect = true;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                for (int i = 0; i < ofd.FileNames.Length; i++)
+                {
+                    dm.AddImage(ofd.FileNames[i]);
+                }
                 UpdateUI();
             }
         }

@@ -1,4 +1,6 @@
 ﻿using PrivateData.Models;
+using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -13,10 +15,22 @@ namespace PrivateData.ViewModels
         //public event ProgressChanged ProgressChanges;
         public string Title => privateData.Title;
         public string Contents => privateData.Contents;
+        public Bitmap[] Images => privateData.Images.ToArray();
 
         public DataManager(string title, string contents)
         {
             privateData = new PData(title, contents);
+        }
+
+        public void AddImage(string pathToFile)
+        {
+            Bitmap image = new Bitmap(pathToFile);
+            privateData.AddImage(image);
+        }
+
+        public void RemoveImage(Bitmap image)
+        {
+            privateData.RemoveImage(image);
         }
 
         public void SaveData(string filePath, string pass)
@@ -38,7 +52,13 @@ namespace PrivateData.ViewModels
             byte[] data = File.ReadAllBytes(filePath);
             byte[] dataDecompressed = DecompressBytes(data);
             byte[] dataDecompAndDecrypt = DecryptBytes(dataDecompressed, pass);
-            var result = bf.Deserialize(new MemoryStream(dataDecompAndDecrypt)) as PData;
+            PData result = bf.Deserialize(new MemoryStream(dataDecompAndDecrypt)) as PData;
+
+            if (result.Images == null)
+            {
+                result.Images = new List<Bitmap>();
+            }
+
             privateData = result;
         }
 
