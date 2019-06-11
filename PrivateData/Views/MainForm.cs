@@ -1,11 +1,14 @@
 ﻿using PrivateData.ViewModels;
 using PrivateData.Views.Dialogs;
+using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using VisualPlus.Toolkit.Dialogs;
 
 namespace PrivateData
 {
-    public partial class frm_main : Form
+    public partial class frm_main : VisualForm
     {
         string[] args;
         DataManager dm = new DataManager("", "");
@@ -104,6 +107,24 @@ namespace PrivateData
             settings.Show();
         }
 
+        #region Move form
+        private void Frm_main_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        #endregion
         #region private
         void SaveToFile(string path, string pass)
         {
@@ -194,6 +215,7 @@ namespace PrivateData
                 UpdateUI();
                 importedPath = pathToFile;
                 importedPass = pass;
+                saved = true;
             }
             catch
             {
