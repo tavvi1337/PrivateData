@@ -30,165 +30,392 @@ namespace PrivateData
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_main));
-            this.txtbx_content = new System.Windows.Forms.RichTextBox();
-            this.txtbx_name = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.btn_load = new System.Windows.Forms.Button();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tab_text = new System.Windows.Forms.TabPage();
-            this.tab_pictures = new System.Windows.Forms.TabPage();
-            this.btn_importImage = new System.Windows.Forms.Button();
-            this.btn_settings = new System.Windows.Forms.Button();
-            this.tabControl.SuspendLayout();
-            this.tab_text.SuspendLayout();
+            this.tabControl_ = new VisualPlus.Toolkit.Controls.Navigation.VisualTabControl();
+            this.tab_text_ = new VisualPlus.Toolkit.Child.VisualTabPage();
+            this.txtbx_content_ = new VisualPlus.Toolkit.Controls.Editors.VisualRichTextBox();
+            this.tab_pictures_ = new VisualPlus.Toolkit.Child.VisualTabPage();
+            this.btn_save_ = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
+            this.btn_load_ = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
+            this.btn_importImage_ = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
+            this.btn_settings_ = new VisualPlus.Toolkit.Controls.Interactivity.VisualButton();
+            this.visualLabel1 = new VisualPlus.Toolkit.Controls.Interactivity.VisualLabel();
+            this.txtbx_name_ = new VisualPlus.Toolkit.Controls.Editors.VisualTextBox();
+            this.tabControl_.SuspendLayout();
+            this.tab_text_.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtbx_content
+            // tabControl_
             // 
-            this.txtbx_content.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControl_.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbx_content.Location = new System.Drawing.Point(3, 6);
-            this.txtbx_content.Name = "txtbx_content";
-            this.txtbx_content.Size = new System.Drawing.Size(541, 210);
-            this.txtbx_content.TabIndex = 0;
-            this.txtbx_content.Text = "";
+            this.tabControl_.Controls.Add(this.tab_text_);
+            this.tabControl_.Controls.Add(this.tab_pictures_);
+            this.tabControl_.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl_.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabControl_.ItemSize = new System.Drawing.Size(100, 25);
+            this.tabControl_.Location = new System.Drawing.Point(9, 38);
+            this.tabControl_.MinimumSize = new System.Drawing.Size(144, 85);
+            this.tabControl_.Name = "tabControl_";
+            this.tabControl_.SelectedIndex = 0;
+            this.tabControl_.SelectorAlignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControl_.SelectorSpacing = 10;
+            this.tabControl_.SelectorThickness = 5;
+            this.tabControl_.SelectorType = VisualPlus.Toolkit.Controls.Navigation.VisualTabControl.SelectorTypes.Arrow;
+            this.tabControl_.SelectorVisible = true;
+            this.tabControl_.Separator = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.tabControl_.SeparatorSpacing = 2;
+            this.tabControl_.SeparatorThickness = 2F;
+            this.tabControl_.Size = new System.Drawing.Size(661, 298);
+            this.tabControl_.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl_.State = VisualPlus.Enumerators.MouseStates.Normal;
+            this.tabControl_.TabIndex = 7;
+            this.tabControl_.TabMenu = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(73)))));
+            this.tabControl_.TabSelector = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.tabControl_.TextRendering = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
-            // txtbx_name
+            // tab_text_
             // 
-            this.txtbx_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbx_name.Location = new System.Drawing.Point(84, 12);
-            this.txtbx_name.Name = "txtbx_name";
-            this.txtbx_name.Size = new System.Drawing.Size(579, 20);
-            this.txtbx_name.TabIndex = 1;
+            this.tab_text_.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.tab_text_.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.tab_text_.Border.Rounding = 6;
+            this.tab_text_.Border.Thickness = 1;
+            this.tab_text_.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rectangle;
+            this.tab_text_.Border.Visible = false;
+            this.tab_text_.Controls.Add(this.txtbx_content_);
+            this.tab_text_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(181)))), ((int)(((byte)(187)))));
+            this.tab_text_.HeaderImage = null;
+            this.tab_text_.Image = null;
+            this.tab_text_.ImageSize = new System.Drawing.Size(16, 16);
+            this.tab_text_.Location = new System.Drawing.Point(4, 29);
+            this.tab_text_.Name = "tab_text_";
+            this.tab_text_.Rectangle = new System.Drawing.Rectangle(2, 2, 100, 25);
+            this.tab_text_.Size = new System.Drawing.Size(653, 265);
+            this.tab_text_.TabHover = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
+            this.tab_text_.TabIndex = 0;
+            this.tab_text_.TabNormal = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(73)))));
+            this.tab_text_.TabSelected = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(76)))), ((int)(((byte)(88)))));
+            this.tab_text_.Text = "Текст";
+            this.tab_text_.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.tab_text_.TextImageRelation = VisualPlus.Toolkit.Child.VisualTabPage.TextImageRelations.Text;
+            this.tab_text_.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.tab_text_.TextSelected = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
             // 
-            // label1
+            // txtbx_content_
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Название: ";
-            // 
-            // btn_save
-            // 
-            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_save.Location = new System.Drawing.Point(556, 363);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(119, 22);
-            this.btn_save.TabIndex = 3;
-            this.btn_save.Text = "Сохранить";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.Btn_save_Click);
-            // 
-            // btn_load
-            // 
-            this.btn_load.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_load.Location = new System.Drawing.Point(452, 362);
-            this.btn_load.Name = "btn_load";
-            this.btn_load.Size = new System.Drawing.Size(98, 23);
-            this.btn_load.TabIndex = 4;
-            this.btn_load.Text = "Загрузить файл";
-            this.btn_load.UseVisualStyleBackColor = true;
-            this.btn_load.Click += new System.EventHandler(this.Btn_load_Click);
-            // 
-            // tabControl
-            // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtbx_content_.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.tab_text);
-            this.tabControl.Controls.Add(this.tab_pictures);
-            this.tabControl.Location = new System.Drawing.Point(2, 38);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(673, 319);
-            this.tabControl.TabIndex = 5;
+            this.txtbx_content_.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.txtbx_content_.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.txtbx_content_.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtbx_content_.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
+            this.txtbx_content_.Border.HoverVisible = true;
+            this.txtbx_content_.Border.Rounding = 6;
+            this.txtbx_content_.Border.Thickness = 1;
+            this.txtbx_content_.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
+            this.txtbx_content_.Border.Visible = true;
+            this.txtbx_content_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtbx_content_.Location = new System.Drawing.Point(3, 3);
+            this.txtbx_content_.MaxLength = 2147483647;
+            this.txtbx_content_.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
+            this.txtbx_content_.Name = "txtbx_content_";
+            this.txtbx_content_.ReadOnly = false;
+            this.txtbx_content_.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both;
+            this.txtbx_content_.ShowSelectionMargin = false;
+            this.txtbx_content_.Size = new System.Drawing.Size(647, 259);
+            this.txtbx_content_.TabIndex = 0;
+            this.txtbx_content_.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            this.txtbx_content_.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtbx_content_.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtbx_content_.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtbx_content_.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.txtbx_content_.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.txtbx_content_.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
-            // tab_text
+            // tab_pictures_
             // 
-            this.tab_text.Controls.Add(this.txtbx_content);
-            this.tab_text.Location = new System.Drawing.Point(4, 22);
-            this.tab_text.Name = "tab_text";
-            this.tab_text.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_text.Size = new System.Drawing.Size(665, 293);
-            this.tab_text.TabIndex = 0;
-            this.tab_text.Text = "Текст";
-            this.tab_text.UseVisualStyleBackColor = true;
+            this.tab_pictures_.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.tab_pictures_.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.tab_pictures_.Border.Rounding = 6;
+            this.tab_pictures_.Border.Thickness = 1;
+            this.tab_pictures_.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rectangle;
+            this.tab_pictures_.Border.Visible = false;
+            this.tab_pictures_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(181)))), ((int)(((byte)(187)))));
+            this.tab_pictures_.HeaderImage = null;
+            this.tab_pictures_.Image = null;
+            this.tab_pictures_.ImageSize = new System.Drawing.Size(16, 16);
+            this.tab_pictures_.Location = new System.Drawing.Point(4, 29);
+            this.tab_pictures_.Name = "tab_pictures_";
+            this.tab_pictures_.Rectangle = new System.Drawing.Rectangle(102, 2, 100, 25);
+            this.tab_pictures_.Size = new System.Drawing.Size(653, 265);
+            this.tab_pictures_.TabHover = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
+            this.tab_pictures_.TabIndex = 1;
+            this.tab_pictures_.TabNormal = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(73)))));
+            this.tab_pictures_.TabSelected = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(76)))), ((int)(((byte)(88)))));
+            this.tab_pictures_.Text = "Изображения";
+            this.tab_pictures_.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.tab_pictures_.TextImageRelation = VisualPlus.Toolkit.Child.VisualTabPage.TextImageRelations.Text;
+            this.tab_pictures_.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.tab_pictures_.TextSelected = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(220)))), ((int)(((byte)(227)))));
             // 
-            // tab_pictures
+            // btn_save_
             // 
-            this.tab_pictures.AutoScroll = true;
-            this.tab_pictures.Location = new System.Drawing.Point(4, 22);
-            this.tab_pictures.Name = "tab_pictures";
-            this.tab_pictures.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_pictures.Size = new System.Drawing.Size(665, 293);
-            this.tab_pictures.TabIndex = 1;
-            this.tab_pictures.Text = "Изображения";
-            this.tab_pictures.UseVisualStyleBackColor = true;
+            this.btn_save_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_save_.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_save_.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.btn_save_.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_save_.BackColorState.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_save_.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btn_save_.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
+            this.btn_save_.Border.HoverVisible = true;
+            this.btn_save_.Border.Rounding = 6;
+            this.btn_save_.Border.Thickness = 1;
+            this.btn_save_.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
+            this.btn_save_.Border.Visible = true;
+            this.btn_save_.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_save_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_save_.Image = null;
+            this.btn_save_.Location = new System.Drawing.Point(553, 341);
+            this.btn_save_.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
+            this.btn_save_.Name = "btn_save_";
+            this.btn_save_.Size = new System.Drawing.Size(113, 30);
+            this.btn_save_.TabIndex = 8;
+            this.btn_save_.Text = "Сохранить";
+            this.btn_save_.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.btn_save_.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            this.btn_save_.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_save_.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_save_.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_save_.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_save_.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_save_.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btn_save_.Click += new System.EventHandler(this.Btn_save_Click);
             // 
-            // btn_importImage
+            // btn_load_
             // 
-            this.btn_importImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_importImage.Location = new System.Drawing.Point(303, 363);
-            this.btn_importImage.Name = "btn_importImage";
-            this.btn_importImage.Size = new System.Drawing.Size(143, 22);
-            this.btn_importImage.TabIndex = 0;
-            this.btn_importImage.Text = "Добавить изображения";
-            this.btn_importImage.UseVisualStyleBackColor = true;
-            this.btn_importImage.Click += new System.EventHandler(this.Btn_importImage_Click);
+            this.btn_load_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_load_.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_load_.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.btn_load_.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_load_.BackColorState.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_load_.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btn_load_.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
+            this.btn_load_.Border.HoverVisible = true;
+            this.btn_load_.Border.Rounding = 6;
+            this.btn_load_.Border.Thickness = 1;
+            this.btn_load_.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
+            this.btn_load_.Border.Visible = true;
+            this.btn_load_.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_load_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_load_.Image = null;
+            this.btn_load_.Location = new System.Drawing.Point(434, 341);
+            this.btn_load_.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
+            this.btn_load_.Name = "btn_load_";
+            this.btn_load_.Size = new System.Drawing.Size(113, 30);
+            this.btn_load_.TabIndex = 9;
+            this.btn_load_.Text = "Загрузить файл";
+            this.btn_load_.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.btn_load_.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            this.btn_load_.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_load_.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_load_.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_load_.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_load_.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_load_.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btn_load_.Click += new System.EventHandler(this.Btn_load_Click);
             // 
-            // btn_settings
+            // btn_importImage_
             // 
-            this.btn_settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_settings.Location = new System.Drawing.Point(178, 363);
-            this.btn_settings.Name = "btn_settings";
-            this.btn_settings.Size = new System.Drawing.Size(119, 22);
-            this.btn_settings.TabIndex = 6;
-            this.btn_settings.Text = "Настройки";
-            this.btn_settings.UseVisualStyleBackColor = true;
-            this.btn_settings.Click += new System.EventHandler(this.Btn_settings_Click);
+            this.btn_importImage_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_importImage_.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_importImage_.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.btn_importImage_.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_importImage_.BackColorState.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_importImage_.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btn_importImage_.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
+            this.btn_importImage_.Border.HoverVisible = true;
+            this.btn_importImage_.Border.Rounding = 6;
+            this.btn_importImage_.Border.Thickness = 1;
+            this.btn_importImage_.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
+            this.btn_importImage_.Border.Visible = true;
+            this.btn_importImage_.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_importImage_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_importImage_.Image = null;
+            this.btn_importImage_.Location = new System.Drawing.Point(315, 341);
+            this.btn_importImage_.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
+            this.btn_importImage_.Name = "btn_importImage_";
+            this.btn_importImage_.Size = new System.Drawing.Size(113, 30);
+            this.btn_importImage_.TabIndex = 10;
+            this.btn_importImage_.Text = "Добавить изображения";
+            this.btn_importImage_.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.btn_importImage_.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            this.btn_importImage_.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_importImage_.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_importImage_.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_importImage_.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_importImage_.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_importImage_.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btn_importImage_.Click += new System.EventHandler(this.Btn_importImage_Click);
+            // 
+            // btn_settings_
+            // 
+            this.btn_settings_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_settings_.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_settings_.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.btn_settings_.BackColorState.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_settings_.BackColorState.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_settings_.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btn_settings_.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
+            this.btn_settings_.Border.HoverVisible = true;
+            this.btn_settings_.Border.Rounding = 6;
+            this.btn_settings_.Border.Thickness = 1;
+            this.btn_settings_.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
+            this.btn_settings_.Border.Visible = true;
+            this.btn_settings_.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_settings_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_settings_.Image = null;
+            this.btn_settings_.Location = new System.Drawing.Point(196, 341);
+            this.btn_settings_.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
+            this.btn_settings_.Name = "btn_settings_";
+            this.btn_settings_.Size = new System.Drawing.Size(113, 30);
+            this.btn_settings_.TabIndex = 11;
+            this.btn_settings_.Text = "Настройки";
+            this.btn_settings_.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.btn_settings_.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            this.btn_settings_.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_settings_.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_settings_.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_settings_.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_settings_.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.btn_settings_.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btn_settings_.Click += new System.EventHandler(this.Btn_settings_Click);
+            // 
+            // visualLabel1
+            // 
+            this.visualLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.visualLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.visualLabel1.Location = new System.Drawing.Point(9, 9);
+            this.visualLabel1.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
+            this.visualLabel1.Name = "visualLabel1";
+            this.visualLabel1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.visualLabel1.Outline = false;
+            this.visualLabel1.OutlineColor = System.Drawing.Color.Red;
+            this.visualLabel1.OutlineLocation = new System.Drawing.Point(0, 0);
+            this.visualLabel1.ReflectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.visualLabel1.ReflectionSpacing = 0;
+            this.visualLabel1.ShadowColor = System.Drawing.Color.Black;
+            this.visualLabel1.ShadowDirection = 315;
+            this.visualLabel1.ShadowLocation = new System.Drawing.Point(0, 0);
+            this.visualLabel1.ShadowOpacity = 100;
+            this.visualLabel1.Size = new System.Drawing.Size(82, 23);
+            this.visualLabel1.TabIndex = 12;
+            this.visualLabel1.Text = "Название: ";
+            this.visualLabel1.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.visualLabel1.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.visualLabel1.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            this.visualLabel1.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.visualLabel1.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.visualLabel1.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.visualLabel1.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.visualLabel1.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.visualLabel1.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // txtbx_name_
+            // 
+            this.txtbx_name_.AlphaNumeric = false;
+            this.txtbx_name_.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbx_name_.BackColorState.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txtbx_name_.BackColorState.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(249)))));
+            this.txtbx_name_.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtbx_name_.Border.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
+            this.txtbx_name_.Border.HoverVisible = true;
+            this.txtbx_name_.Border.Rounding = 6;
+            this.txtbx_name_.Border.Thickness = 1;
+            this.txtbx_name_.Border.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
+            this.txtbx_name_.Border.Visible = true;
+            this.txtbx_name_.ButtonBorder.Color = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtbx_name_.ButtonBorder.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(183)))), ((int)(((byte)(230)))));
+            this.txtbx_name_.ButtonBorder.HoverVisible = true;
+            this.txtbx_name_.ButtonBorder.Rounding = 6;
+            this.txtbx_name_.ButtonBorder.Thickness = 1;
+            this.txtbx_name_.ButtonBorder.Type = VisualPlus.Enumerators.ShapeTypes.Rounded;
+            this.txtbx_name_.ButtonBorder.Visible = true;
+            this.txtbx_name_.ButtonColor.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtbx_name_.ButtonColor.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txtbx_name_.ButtonColor.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtbx_name_.ButtonColor.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtbx_name_.ButtonFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtbx_name_.ButtonIndent = 3;
+            this.txtbx_name_.ButtonText = "visualButton";
+            this.txtbx_name_.ButtonVisible = false;
+            this.txtbx_name_.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtbx_name_.Image = null;
+            this.txtbx_name_.ImageSize = new System.Drawing.Size(16, 16);
+            this.txtbx_name_.ImageVisible = false;
+            this.txtbx_name_.ImageWidth = 35;
+            this.txtbx_name_.Location = new System.Drawing.Point(74, 9);
+            this.txtbx_name_.MouseState = VisualPlus.Enumerators.MouseStates.Normal;
+            this.txtbx_name_.Name = "txtbx_name_";
+            this.txtbx_name_.PasswordChar = '\0';
+            this.txtbx_name_.ReadOnly = false;
+            this.txtbx_name_.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtbx_name_.Size = new System.Drawing.Size(596, 23);
+            this.txtbx_name_.TabIndex = 13;
+            this.txtbx_name_.TextBoxWidth = 586;
+            this.txtbx_name_.TextStyle.Disabled = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(129)))), ((int)(((byte)(129)))));
+            this.txtbx_name_.TextStyle.Enabled = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtbx_name_.TextStyle.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtbx_name_.TextStyle.Pressed = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtbx_name_.TextStyle.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.txtbx_name_.TextStyle.TextLineAlignment = System.Drawing.StringAlignment.Center;
+            this.txtbx_name_.TextStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtbx_name_.Watermark.Active = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.txtbx_name_.Watermark.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtbx_name_.Watermark.Inactive = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
+            this.txtbx_name_.Watermark.Text = "Watermark text";
+            this.txtbx_name_.Watermark.Visible = false;
+            this.txtbx_name_.WordWrap = true;
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 388);
-            this.Controls.Add(this.btn_settings);
-            this.Controls.Add(this.btn_importImage);
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.btn_load);
-            this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtbx_name);
+            this.ClientSize = new System.Drawing.Size(680, 380);
+            this.Controls.Add(this.txtbx_name_);
+            this.Controls.Add(this.visualLabel1);
+            this.Controls.Add(this.btn_settings_);
+            this.Controls.Add(this.btn_importImage_);
+            this.Controls.Add(this.btn_load_);
+            this.Controls.Add(this.btn_save_);
+            this.Controls.Add(this.tabControl_);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Private data";
             this.Shown += new System.EventHandler(this.Frm_main_Shown);
-            this.tabControl.ResumeLayout(false);
-            this.tab_text.ResumeLayout(false);
+            this.tabControl_.ResumeLayout(false);
+            this.tab_text_.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox txtbx_content;
-        private System.Windows.Forms.TextBox txtbx_name;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.Button btn_load;
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tab_text;
-        private System.Windows.Forms.TabPage tab_pictures;
-        private System.Windows.Forms.Button btn_importImage;
-        private Button btn_settings;
+        private VisualPlus.Toolkit.Controls.Navigation.VisualTabControl tabControl_;
+        private VisualPlus.Toolkit.Child.VisualTabPage tab_text_;
+        private VisualPlus.Toolkit.Child.VisualTabPage tab_pictures_;
+        private VisualPlus.Toolkit.Controls.Interactivity.VisualButton btn_save_;
+        private VisualPlus.Toolkit.Controls.Interactivity.VisualButton btn_load_;
+        private VisualPlus.Toolkit.Controls.Interactivity.VisualButton btn_importImage_;
+        private VisualPlus.Toolkit.Controls.Interactivity.VisualButton btn_settings_;
+        private VisualPlus.Toolkit.Controls.Editors.VisualRichTextBox txtbx_content_;
+        private VisualPlus.Toolkit.Controls.Interactivity.VisualLabel visualLabel1;
+        private VisualPlus.Toolkit.Controls.Editors.VisualTextBox txtbx_name_;
     }
 }
 

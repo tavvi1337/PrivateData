@@ -41,7 +41,7 @@ namespace PrivateData
 
         private void Btn_save_Click(object sender, System.EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtbx_name.Text))
+            if (string.IsNullOrWhiteSpace(txtbx_name_.Text))
             {
                 MessageBox.Show("Пожалуйста введите название", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -107,7 +107,7 @@ namespace PrivateData
         #region private
         void SaveToFile(string path, string pass)
         {
-            dm = new DataManager(txtbx_name.Text, txtbx_content.Text);
+            dm = new DataManager(txtbx_name_.Text, txtbx_content_.Text);
             dm.SaveData(path, pass);
 
             importedPath = path;
@@ -117,13 +117,13 @@ namespace PrivateData
 
         void UpdateUI()
         {
-            txtbx_name.Text = dm.Title;
-            txtbx_content.Text = dm.Contents;
+            txtbx_name_.Text = dm.Title;
+            txtbx_content_.Text = dm.Contents;
 
             pic_margain = 20;
             pic_location_X = 5;
             pic_location_Y = 5;
-            tab_pictures.Controls.Clear();
+            tab_pictures_.Controls.Clear();
 
             foreach (Bitmap image in dm.Images)
             {
@@ -147,7 +147,7 @@ namespace PrivateData
             pic_box.Click += (s, e) => { new ImageViewer(image, dm).ShowDialog(); UpdateUI(); };
             pic_location_Y += pic_box.Height + pic_margain;
 
-            tab_pictures.Controls.Add(pic_box);
+            tab_pictures_.Controls.Add(pic_box);
         }
 
         string AskSavePath()
