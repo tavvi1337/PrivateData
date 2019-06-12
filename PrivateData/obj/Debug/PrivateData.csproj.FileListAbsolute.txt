@@ -12,5 +12,6 @@ C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.Views.Dialogs.frm_AskPasswor
 C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.Views.Dialogs.frm_askPasswordNoConfirm.resources
 C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.Views.Dialogs.ImageViewer.resources
 C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.Views.Dialogs.frm_settings.resources
-C:\C#\PrivateData\PrivateData\bin\Debug\VisualPlus.dll
 C:\C#\PrivateData\PrivateData\obj\Debug\PrivateData.csproj.CopyComplete
+C:\C#\PrivateData\PrivateData\bin\Debug\MetroFramework.dll
+C:\C#\PrivateData\PrivateData\bin\Debug\MetroFramework.Fonts.dll

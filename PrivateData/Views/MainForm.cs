@@ -1,14 +1,14 @@
-﻿using PrivateData.ViewModels;
+﻿using MetroFramework.Forms;
+using PrivateData.ViewModels;
 using PrivateData.Views.Dialogs;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using VisualPlus.Toolkit.Dialogs;
 
 namespace PrivateData
 {
-    public partial class frm_main : VisualForm
+    public partial class frm_main : MetroForm
     {
         string[] args;
         DataManager dm = new DataManager("", "");
@@ -44,7 +44,7 @@ namespace PrivateData
 
         private void Btn_save_Click(object sender, System.EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtbx_name_.Text))
+            if (string.IsNullOrWhiteSpace(txtbx_name.Text))
             {
                 MessageBox.Show("Пожалуйста введите название", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -128,7 +128,7 @@ namespace PrivateData
         #region private
         void SaveToFile(string path, string pass)
         {
-            dm = new DataManager(txtbx_name_.Text, txtbx_content_.Text);
+            dm = new DataManager(txtbx_name.Text, txtbx_content.Text);
             dm.SaveData(path, pass);
 
             importedPath = path;
@@ -138,13 +138,13 @@ namespace PrivateData
 
         void UpdateUI()
         {
-            txtbx_name_.Text = dm.Title;
-            txtbx_content_.Text = dm.Contents;
+            txtbx_name.Text = dm.Title;
+            txtbx_content.Text = dm.Contents;
 
             pic_margain = 20;
             pic_location_X = 5;
             pic_location_Y = 5;
-            tab_pictures_.Controls.Clear();
+            tab_pictures.Controls.Clear();
 
             foreach (Bitmap image in dm.Images)
             {
@@ -168,7 +168,7 @@ namespace PrivateData
             pic_box.Click += (s, e) => { new ImageViewer(image, dm).ShowDialog(); UpdateUI(); };
             pic_location_Y += pic_box.Height + pic_margain;
 
-            tab_pictures_.Controls.Add(pic_box);
+            tab_pictures.Controls.Add(pic_box);
         }
 
         string AskSavePath()
@@ -223,5 +223,13 @@ namespace PrivateData
             }
         }
         #endregion
+
+        private void Txtbx_content__KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtbx_content.Text += "\n";
+            }
+        }
     }
 }
