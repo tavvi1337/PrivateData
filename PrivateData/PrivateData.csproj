@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,16 +37,6 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,6 +50,184 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MetroFramework.Fonts\FontResolver.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFrameworkDesignAssembly.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\AnimationAction.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\AnimationBase.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\AnimationFinishedEvaluator.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\ColorBlendAnimation.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\DelayedCall.2.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\DelayedCall.3.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\DelayedCall.4.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\DelayedCall.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\ExpandAnimation.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\MoveAnimation.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Animation\TransitionType.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\AssemblyRef.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Components\MetroComponentBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Components\MetroStyleExtender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Components\MetroStyleManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Components\MetroToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Components\MetroToolTipBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroCheckBoxBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroComboBoxBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroControlBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroFormBase.Designer.cs">
+      <DependentUpon>MetroFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroLabelBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroLabelMode.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroPanelBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroProgressBarBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroProgressSpinner.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroRadioButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroScrollOrientation.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroTabControlBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroTabPageBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroTabPageCollection.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroTile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroToggle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Controls\MetroUserControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Drawing\MetroBorderStyle.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Drawing\MetroPaint.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Forms\MetroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Forms\MetroForm.Designer.cs">
+      <DependentUpon>MetroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Forms\MetroMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Forms\MetroMessageBox.Designer.cs">
+      <DependentUpon>MetroMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Forms\MetroTaskWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Forms\MetroTaskWindow.Designer.cs">
+      <DependentUpon>MetroTaskWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Interfaces\IMetroComponent.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Interfaces\IMetroContainerControl.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Interfaces\IMetroControl.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Interfaces\IMetroForm.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Interfaces\IMetroStyledComponent.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Localization\MetroLocalize.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroBrushes.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroColors.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroColorStyle.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroDefaults.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroFonts.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroFrameworkAssembly.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroLabelSize.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroLabelWeight.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroLinkSize.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroLinkWeight.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroPens.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroProgressBarSize.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroProgressBarWeight.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroTabControlSize.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroTabControlWeight.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroTextBoxSize.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroTextBoxWeight.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroThemeStyle.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroTileTextSize.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\MetroTileTextWeight.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Native\RECT.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Native\SubClass.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Native\Taskbar.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Native\TaskbarPosition.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Native\WinApi.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Native\WinCaret.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Properties\AssemblyInfo.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Properties\Resources.cs" />
+    <Compile Include="MetroFramework.Fonts\MetroFramework\Properties\Settings.Designer.cs" />
+    <Compile Include="MetroFramework.Fonts\Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\FileAssociation.cs" />
     <Compile Include="Views\Dialogs\frm_AskPassword.cs">
       <SubType>Form</SubType>
@@ -94,6 +263,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\DataManager.cs" />
+    <EmbeddedResource Include="MetroFramework.Fonts\MetroFramework\Forms\MetroTaskWindow.resources" />
+    <EmbeddedResource Include="MetroFramework.Fonts\MetroFramework\Properties\Resources.resources" />
     <EmbeddedResource Include="Views\Dialogs\frm_AskPassword.resx">
       <DependentUpon>frm_AskPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +289,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="MetroFramework.Fonts\Fakes\MetroFramework.fakes" />
+    <None Include="MetroFramework.Fonts\MetroFramework\Properties\Settings.settings" />
+    <None Include="MetroFramework.Fonts\Resources\Open_Sans.ttf" />
+    <None Include="MetroFramework.Fonts\Resources\Open_Sans_Bold.ttf" />
+    <None Include="MetroFramework.Fonts\Resources\Open_Sans_Light.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -134,6 +310,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <Content Include="MetroFramework.Fonts\MetroFramework\Localization\de\MetroToggle.xml" />
+    <Content Include="MetroFramework.Fonts\MetroFramework\Localization\en\MetroToggle.xml" />
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

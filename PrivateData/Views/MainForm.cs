@@ -60,11 +60,11 @@ namespace PrivateData
 
                 if (pass == null) { return; }
 
-                SaveToFile(path, pass);
+                SaveDataToFile(path, pass);
             }
             else
             {
-                SaveToFile(importedPath, importedPass);
+                SaveDataToFile(importedPath, importedPass);
             }
         }
 
@@ -80,15 +80,17 @@ namespace PrivateData
 
                 LoadData(file);
 
-                UpdateUI();
+                UpdateFormUI();
             }
         }
 
         private void Btn_importImage_Click(object sender, System.EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-            ofd.Multiselect = true;
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png",
+                Multiselect = true
+            };
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -96,15 +98,23 @@ namespace PrivateData
                 {
                     dm.AddImage(ofd.FileNames[i]);
                 }
-                UpdateUI();
+                UpdateFormUI();
                 saved = false;
             }
         }
 
-        private void Btn_settings_Click(object sender, System.EventArgs e)
+        private void Btn_settings_Click(object sender, EventArgs e)
         {
             frm_settings settings = new frm_settings();
             settings.Show();
+        }
+
+        private void Txtbx_content__KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtbx_content.Text += "\n";
+            }
         }
 
         #region Move form
@@ -120,13 +130,13 @@ namespace PrivateData
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
-        [DllImportAttribute("user32.dll")]
+        [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
+        [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         #endregion
         #region private
-        void SaveToFile(string path, string pass)
+        void SaveDataToFile(string path, string pass)
         {
             dm = new DataManager(txtbx_name.Text, txtbx_content.Text);
             dm.SaveData(path, pass);
@@ -136,7 +146,7 @@ namespace PrivateData
             saved = true;
         }
 
-        void UpdateUI()
+        void UpdateFormUI()
         {
             txtbx_name.Text = dm.Title;
             txtbx_content.Text = dm.Contents;
@@ -165,7 +175,7 @@ namespace PrivateData
                 Size = new Size(image.Width, image.Height)
             };
 
-            pic_box.Click += (s, e) => { new ImageViewer(image, dm).ShowDialog(); UpdateUI(); };
+            pic_box.Click += (s, e) => { new ImageViewer(image, dm).ShowDialog(); UpdateFormUI(); };
             pic_location_Y += pic_box.Height + pic_margain;
 
             tab_pictures.Controls.Add(pic_box);
@@ -212,7 +222,7 @@ namespace PrivateData
             try
             {
                 dm.LoadData(pathToFile, pass);
-                UpdateUI();
+                UpdateFormUI();
                 importedPath = pathToFile;
                 importedPass = pass;
                 saved = true;
@@ -223,13 +233,5 @@ namespace PrivateData
             }
         }
         #endregion
-
-        private void Txtbx_content__KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txtbx_content.Text += "\n";
-            }
-        }
     }
 }

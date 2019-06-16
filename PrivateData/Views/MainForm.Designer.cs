@@ -54,6 +54,7 @@ namespace PrivateData
             this.metroTabControl1.Controls.Add(this.tab_pictures);
             this.metroTabControl1.Location = new System.Drawing.Point(12, 97);
             this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.Padding = new System.Drawing.Point(6, 8);
             this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(702, 330);
             this.metroTabControl1.TabIndex = 14;
@@ -61,6 +62,7 @@ namespace PrivateData
             // tab_text
             // 
             this.tab_text.Controls.Add(this.txtbx_content);
+            this.tab_text.Enabled = true;
             this.tab_text.HorizontalScrollbarBarColor = true;
             this.tab_text.Location = new System.Drawing.Point(4, 35);
             this.tab_text.Name = "tab_text";
@@ -68,6 +70,7 @@ namespace PrivateData
             this.tab_text.TabIndex = 0;
             this.tab_text.Text = "Текст";
             this.tab_text.VerticalScrollbarBarColor = true;
+            this.tab_text.Visible = true;
             // 
             // txtbx_content
             // 
@@ -84,6 +87,7 @@ namespace PrivateData
             // tab_pictures
             // 
             this.tab_pictures.AutoScroll = true;
+            this.tab_pictures.Enabled = true;
             this.tab_pictures.HorizontalScrollbar = true;
             this.tab_pictures.HorizontalScrollbarBarColor = true;
             this.tab_pictures.Location = new System.Drawing.Point(4, 35);
@@ -93,6 +97,7 @@ namespace PrivateData
             this.tab_pictures.Text = "Изображения";
             this.tab_pictures.VerticalScrollbar = true;
             this.tab_pictures.VerticalScrollbarBarColor = true;
+            this.tab_pictures.Visible = false;
             // 
             // metroLabel1
             // 
